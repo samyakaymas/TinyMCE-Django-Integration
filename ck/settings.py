@@ -130,19 +130,21 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 TINYMCE_DEFAULT_CONFIG = {
     'height' : 300,
     'width': '100%',
-    'plugins': "image,imagetools,media,codesample,link,code,autosave,tiny_mce_wiris,advlist,charmap,emoticons,lists,table",
+    'plugins': "powerpaste,image,imagetools,media,codesample,link,code,autosave,tiny_mce_wiris,advlist,charmap,emoticons,lists,table",
     'menubar': False,
     'toolbar': "newdocument | undo redo searchreplace | styleselect fontselect fontsizeselect bold italic underline strikethrough superscript subscript codeformat numlist bullist alignleft aligncenter alignright forecolor backcolor | link image emoticons media codesample code about| tiny_mce_wiris_formulaEditor tiny_mce_wiris_formulaEditorChemistry | charmap table tabledelete | tableprops tablerowprops tablecellprops | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol",
     'image_caption': True,
     'image_advtab': True,
     'custom_undo_redo_levels': 10,
     'paste_data_images' : True,
+    'powerpaste_allow_local_images' : True,
     'autosave_ask_before_unload': False,
     'autosave_interval': "2s",
     'autosave_restore_when_empty': True,
     'autosave_retention': '1440m',
     'external_plugins' : {
         'tiny_mce_wiris' : '/static/@wiris/mathtype-tinymce4/plugin.min.js',
+        # 'powerpaste': 'http://www.server.com/application/external_plugins/powerpaste/plugin.js',
     },
     'images_upload_handler': """function (blobInfo, success, failure) {
 		success("data:" + blobInfo.blob().type + ";base64," + blobInfo.base64());
