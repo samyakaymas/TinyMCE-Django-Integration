@@ -1,0 +1,21 @@
+{% load static %}
+
+<html>
+<head>
+	<script src="/static/tinymce/tinymce.min.js"></script>
+	<script src="https://www.wiris.net/demo/plugins/app/WIRISplugins.js?viewer=image"></script>
+</head>
+<body>
+	<form id="RichForm" method="post">
+		{% csrf_token %}
+		{{ form.media }}
+		<table>
+		{{ form.as_table}}
+		</table>
+		<button type="submit">Submit</button>
+	</form>
+	<script>
+		
+	</script>
+</body>
+</html>
